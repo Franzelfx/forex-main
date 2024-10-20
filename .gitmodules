@@ -1,0 +1,6 @@
+[submodule "forex-predicter"]
+	path = forex-predicter
+	url = https://github.com/your-username/forex-predicter.git
+[submodule "tradingview-angular-app"]
+	path = tradingview-angular-app
+	url = https://github.com/your-username/tradingview-angular-app.git

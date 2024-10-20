@@ -1,0 +1,30 @@
+# forex-main/docker-compose.yml
+
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./forex-predicter
+    container_name: backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - forex-network
+
+  frontend:
+    build:
+      context: ./tradingview-angular-app
+    container_name: frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    networks:
+      - forex-network
+
+networks:
+  forex-network:
+    driver: bridge
